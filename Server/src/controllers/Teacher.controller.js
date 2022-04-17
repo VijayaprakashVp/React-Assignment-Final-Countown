@@ -16,7 +16,7 @@ router.get("", async (req, res) => {
   try {
     // const page = req.query.page || 1;
     // const size = req.query.size || 4;
-
+    // console.log(req.params.page);
     const teacher = await Teacher.find()
       .populate({
         path: "class_id",

@@ -16,7 +16,6 @@ export const Login = () => {
     <div>
       <h3>Enter Your Username and Password</h3>
 
-      <h4>Enter Username</h4>
       <input
         type="text"
         placeholder="Username"
@@ -27,7 +26,6 @@ export const Login = () => {
       />
       <br />
       <br />
-      <h4>Enter Password</h4>
       <input
         type="text"
         placeholder="Password"
