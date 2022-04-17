@@ -14,13 +14,23 @@ router.post("", async (req, res) => {
 
 router.get("", async (req, res) => {
   try {
+    // const page = req.query.page || 1;
+    // const size = req.query.size || 4;
+
     const teacher = await Teacher.find()
       .populate({
         path: "class_id",
         select: ["Grade", "Section", "Subject"],
       })
+      // .skip((page - 1) * size)
+      // .limit(size)
       .lean()
       .exec();
+
+    // const totalPages = Math.ceil(
+    //   (await Teacher.find().countDocuments()) / size,
+    // );
+
     return res.status(200).send(teacher);
   } catch (e) {
     return res.status(500).send(e.message);
